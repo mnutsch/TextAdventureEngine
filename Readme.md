@@ -88,15 +88,15 @@ After following the instructions in Setup, run the following command to start th
 ### Commands
 The following is a list of commands that the player can enter:
 
-look: This describes the player's current room.
-look at (item): This describes an object which is in the player's current room or the player's inventory.
-look at (npc): This describes an NPC which is in the player's current room.
-get (item): This moves an item from the player's current room to the player's inventory.
-inventory: This lists the items in the player's inventory.
-north: This moves the player to another room if available.
-south: This moves the player to another room if available.
-east: This moves the player to another room if available.
-west: This moves the player to another room if available.
-up: This moves the player to another room if available.
-down: This moves the player to another room if available.
-quit: This quits the game.
+- look: This describes the player's current room.
+- look at (item): This describes an object which is in the player's current room or the player's inventory.
+- look at (npc): This describes an NPC which is in the player's current room.
+- get (item): This moves an item from the player's current room to the player's inventory.
+- inventory: This lists the items in the player's inventory.
+- north: This moves the player to another room if available.
+- south: This moves the player to another room if available.
+- east: This moves the player to another room if available.
+- west: This moves the player to another room if available.
+- up: This moves the player to another room if available.
+- down: This moves the player to another room if available.
+- quit: This quits the game.
