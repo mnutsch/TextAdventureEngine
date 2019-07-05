@@ -263,6 +263,7 @@ async.whilst(
       roomItems = getRoomItems(currentRoom);
       roomNPCs = getRoomNPCs(currentRoom);
 
+      sayToUser(""); // Put a blank line in between rooms. This makes it easier to read the text.
       sayToUser(roomObject.name);
       // Show the room description if this is the player's first time here.
       if(exploredRooms.indexOf(roomObject.name) == -1) {
