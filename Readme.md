@@ -29,7 +29,7 @@ name: This is the name of the room. This value should be unique and not be dupli
 description: This is a sentence describing the room. It is shown to the user when they first enter a room. It also repeated if the player uses the "look" command.
 
 #### paths (rooms)
-paths: This is an array of key value pairs which correspond to other rooms. Paths are the directions that a player can go from the room that they are in. For example, it an item in this array is "north":"porch"; then the player can go to the room "porch" by using the command "north".
+paths: This is an array of key value pairs which correspond to other rooms. Paths are the directions that a player can go from the room that they are in. For example, it an item in this array is "north":"porch"; then the player can go to the room "porch" by using the command "north". The following are valid directions: "north", "south", "east", "west", "up", and "down".
 
 #### requires (rooms)
 requires: Sometimes a player must have an item in their inventory before navigating to a room. The Requires object defines that relationship.
@@ -85,3 +85,18 @@ initialStatement: This is a sentence displayed to the player when the player and
 ## Playing the Game
 After following the instructions in Setup, run the following command to start the text adventure: "node index.js"
 
+### Commands
+The following is a list of commands that the player can enter:
+
+look: This describes the player's current room.
+look at (item): This describes an object which is in the player's current room or the player's inventory.
+look at (npc): This describes an NPC which is in the player's current room.
+get (item): This moves an item from the player's current room to the player's inventory.
+inventory: This lists the items in the player's inventory.
+north: This moves the player to another room if available.
+south: This moves the player to another room if available.
+east: This moves the player to another room if available.
+west: This moves the player to another room if available.
+up: This moves the player to another room if available.
+down: This moves the player to another room if available.
+quit: This quits the game.
