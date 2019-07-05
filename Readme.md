@@ -23,53 +23,65 @@ startingLocation: This is the name of the room that the player will start in.
 ### rooms
 rooms: This element contains an array of objects describing rooms. Rooms are places that the player can navigate through during the game.
 
-#### name
-name: This is the name of the room. This value must be unique and should not be duplicated by other room objects.
+#### name (rooms)
+name: This is the name of the room. This value should be unique and not be duplicated by other room objects. Do not name a room "inventory" as this is a reserved term.
 
-#### description
+#### description (rooms)
 description: This is a sentence describing the room. It is shown to the user when they first enter a room. It also repeated if the player uses the "look" command.
 
-#### paths
+#### paths (rooms)
 paths: This is an array of key value pairs which correspond to other rooms. Paths are the directions that a player can go from the room that they are in. For example, it an item in this array is "north":"porch"; then the player can go to the room "porch" by using the command "north".
 
-#### requires
+#### requires (rooms)
 requires: Sometimes a player must have an item in their inventory before navigating to a room. The Requires object defines that relationship.
 
-##### objectName
+##### objectName (rooms)
 objectName: This is the name of the object that a player must have in their inventory before they can enter the room.
 
-##### cantGoMessage
+##### cantGoMessage (rooms)
 cantGoMessage: This is the message which gets displayed to the user when they can't enter a room due to the lack of the item described in the objectName.
 
 ### items
 items: This element contains an array of objects describing items. Items are non-character objects that a player can interact with during the game.
 
-#### name
+#### name (items)
+name: This is the name of the item. This value should be unique and not duplicated by other items.
 
-#### description
+#### description (items)
+description: This is a sentence describing the item. It is shown to the user when he/she uses the "look at (item)" command.
 
-#### location
+#### location (items)
+location: This is the initial location of the item. It's value should correspond to the name of a room.
 
-#### canPickUp
+#### canPickUp (items)
+canPickUp: This value should be either "true" or "false". It controls whether or not the player is allowed to take the item and add it to his/her inventory. 
 
 ### npcs
 npcs: This element contains an array of objects decscribing non-player characters (NPCs). NPCs are characters who inhabit the game world. They interact with the player in a variety of ways.
 
-#### name
+#### name (npcs)
+name: This is the name of the NPC.
 
-#### description
+#### description (npcs)
+description: This is a sentence describing the NPC. It is displayed to the player if he/she uses the command "look at (npc)".
 
-#### location
+#### location (npcs)
+location: This is the starting location of the NPC. It should correspond with the name of a room.
 
-#### followsPlayer
+#### followsPlayer (npcs)
+followsPlayer: This value should be "true" or "false". It controls whether or not a NPC follows a player from room to room.
 
-#### followMessage
+#### followMessage (npcs)
+followMessage: This is a sentence displayed to the user if he/she is following by an NPC.
 
-#### roomMessages
+#### roomMessages (npcs)
+roomMessages: This is an object describing statements that the NPC will say in certain rooms.
 
-##### roomName
+##### roomName (roomMessages)
+roomName: This should correspond with the name of a room. This controls where the initialStatement gets displayed to the player.
 
-##### initialStatement
+##### initialStatement (roomMessages)
+initialStatement: This is a sentence displayed to the player when the player and the NPC are in a room together for the first time.
 
 ## Playing the Game
 After following the instructions in Setup, run the following command to start the text adventure: "node index.js"
