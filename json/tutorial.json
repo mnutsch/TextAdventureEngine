@@ -1,0 +1,154 @@
+{
+  "startingLocation": "street",
+  "rooms": [
+    {
+      "name":"street",
+      "paths":{
+        "north":"porch"
+      },
+      "description":"You are on a quiet street in a nice neighborhood. There is a house to the North."
+    },
+    {
+      "name":"porch",
+      "paths":{
+        "west":"entrance",
+        "south":"street"
+      },
+      "description":"You are on the porch of a large house. The house's door is to the West. The street is to the South.",
+      "requires":{
+        "objectName": "key",
+        "cantGoMessage": "The door is locked."
+      }
+    },
+    {
+      "name":"entrance",
+      "paths":{
+        "east":"porch",
+        "north":"living room"
+      },
+      "description":"You are in the entrance of a large house. A door is to the East. A living room is to the North."
+    },
+    {
+      "name":"living room",
+      "paths":{
+        "south": "entrance",
+        "west":"bottom of stairs"
+      },
+      "description":"You are in the living room of a large house. There is a stairwell to the West. There is an entrance to the South."
+    },
+    {
+      "name":"bottom of stairs",
+      "paths":{
+        "up": "top of stairs",
+        "east":"living room"
+      },
+      "description":"You are at the bottom of a stairwell. The stairs continue Up. There is a living room to the East."
+    },
+    {
+      "name":"top of stairs",
+      "paths":{
+        "down": "bottom of stairs",
+        "east":"hallway"
+      },
+      "description":"You are at the top of a stairwell. The stairs go Down. There is a hallway to the East."
+    },
+    {
+      "name":"hallway",
+      "paths":{
+        "west": "top of stairs",
+        "south":"bedroom"
+      },
+      "description":"You are in a hallway. There is a bedroom to the South. There is a stairwell to the West."
+    },
+    {
+      "name":"bedroom",
+      "paths":{
+        "north": "hallway",
+        "down":"street"
+      },
+      "description":"You are in a lavish bedroom. There is a hallway to the North. A rope hangs Down through an open window."
+    }
+  ],
+  "items": [
+    {
+      "name":"key",
+      "description":"A shiny steel key.",
+      "location":"porch",
+      "canPickUp":false
+    },
+    {
+      "name":"lucky penny",
+      "description":"This lucky penny has heads on both sides of the coin.",
+      "location":"inventory",
+      "canPickUp":true
+    },
+    {
+      "name":"painting",
+      "description":"A painting of a beautiful landscape.",
+      "location":"hallway",
+      "canPickUp":true
+    },
+    {
+      "name":"statue",
+      "description":"An elaborate marble statue.",
+      "location":"living room",
+      "canPickUp":true
+    }
+  ],
+  "npcs": [
+    {
+      "name":"tour guide",
+      "description":"A smiling tour guide.",
+      "location":"street",
+      "followsPlayer":true,
+      "followMessage":"The tour guide follows you.",
+      "roomMessages":[
+        {
+          "roomName":"street",
+          "initialStatement":"The tour guide says: Hi! I'm glad that you made it. Say 'North' to go North."
+        },
+        {
+          "roomName":"porch",
+          "initialStatement":"The tour guide says: Say 'get key' to pick up the key. Then say 'West' to go West."
+        },
+        {
+          "roomName":"entrance",
+          "initialStatement":"The tour guide says: Let's go North to see more of the house."
+        },
+        {
+          "roomName":"living room",
+          "initialStatement":"The tour guide says: Let's continue West to the stairwell."
+        },
+        {
+          "roomName":"bottom of stairs",
+          "initialStatement":"The tour guide says: Say 'Up' to go up the stairs."
+        },
+        {
+          "roomName":"top of stairs",
+          "initialStatement":"The tour guide says: Say 'East' to see more of the house."
+        },
+        {
+          "roomName":"hallway",
+          "initialStatement":"The tour guide says: Wait until you see the master bedroom. Say 'South' to continue the tour."
+        },
+        {
+          "roomName":"bedroom",
+          "initialStatement":"The tour guide says: I'm afraid that I haven't been completely honest with you. I'm not a tour guide. I'm a burgler. Now quickly say 'Down' to go down the rope."
+        }
+      ]
+    },
+    {
+      "name":"cat",
+      "description":"An angry cat.",
+      "location":"bedroom",
+      "followsPlayer":false,
+      "followMessage":"",
+      "roomMessages":[
+        {
+          "roomName":"bedroom",
+          "initialStatement":"The cat hisses at you!"
+        }
+      ]
+    }
+  ]
+}
